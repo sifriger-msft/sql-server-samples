@@ -47,7 +47,6 @@ The perf gains from In-Memory OLTP as shown by the load generation app depend on
 
 With default settings on one machine with 24 logical cores and relatively slow SSD for the log the app shows around performance 40X gain, and in this case the bottleneck was log IO.
 
-
 ## About the code
 The code included in this sample is not intended to be a set of best practices on how to build scalable enterprise grade web applications. This is beyond the scope of this quick start sample.
 
