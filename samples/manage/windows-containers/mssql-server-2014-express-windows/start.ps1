@@ -44,4 +44,6 @@ if ($null -ne $dbs -And $dbs.Length -gt 0){
 	}
 }
 
+"Setup complete." | Set-Content "c:\sqlserver.initstate"
+
 while ($true) { Start-Sleep -Seconds 3600 }
