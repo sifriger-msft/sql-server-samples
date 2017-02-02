@@ -14,5 +14,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 ## License
 These samples and templates are all licensed under the MIT license. See the license.txt file in the root.
 
-## Questions
-Email questions to: sqlserversamples@microsoft.com.
+## Questions ご質問
+ご質問は下記メールアドレスまでお願いします。（英語のみ）
+Email: sqlserversamples@microsoft.com.
