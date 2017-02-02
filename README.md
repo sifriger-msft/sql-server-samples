@@ -11,9 +11,9 @@ Each sample should be in its own folder with a README.md file that follows the [
 ## Code of Conduct
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## License
+## License（ライセンス）
 These samples and templates are all licensed under the MIT license. See the license.txt file in the root.
 
-## Questions ご質問
+## Questions （ご質問）
 ご質問は下記メールアドレスまでお願いします。（英語のみ）
 Email: sqlserversamples@microsoft.com.
