@@ -1,19 +1,20 @@
-# SQL Server Samples Repository (和訳したものです）
-This GitHub repository contains code samples that demonstrate how to use Microsoft's SQL products including SQL Server, Azure SQL Database, and Azure SQL Data Warehouse. Each sample includes a README file that explains how to run and use the sample.
+# SQL Server サンプルリポジトリ
+この GitHub リポジトリはマイクロソフトの SQL製品　（SQL Server, Azure SQL Database, Azure SQL Data Warehouse) の利用方法のデモ用のコードサンプルが含まれています。いずれのサンプルにも利用方法について書かれた README ファイルが含まれています。
+ご注意：インメモリ OLTP のような SQL Server の特定のエディションでのみ利用可能な機能は、サポートしているエディションでのみ動作します。
 
-Note that certain features like In-Memory OLTP are edition specific for SQL Server and would be possible to implement if the edition which supports that feature is being used to run the sample. 
+## GitHub で作業
+GitHub で作業するには、https://github.com/microsoft/sql-server-samples のリポジトリをフォークしてください。　ご自身のフォークしたリポジトリで作業していただき、最初に変更を加えた内容をパブリッシュする際にプルリクエストを sql-server-samples のマスターブランチにサブミットしてください。承認者がプルリクエストをレビュー後にプルリクエストを承認またはリジェクトします。
 
-## Working in GitHub
-To work in GitHub, go to https://github.com/microsoft/sql-server-samples and fork the repository. Work in your own fork and when you are ready to submit to make a change or publish your sample for the first time, submit a pull request into the master branch of sql-server-samples. One of the approvers will review your request and accept or reject the pull request.
-
-Each sample should be in its own folder with a README.md file that follows the [template](README_samples_template.md). Generated files (e.g., .exe or .bacpac) and user configuration settings (e.g., .user) should not be committed to GitHub.
+各サンプルのフォルダには必ず README.md ファイルがあり[template](README_samples_template.md)に従った形式になっています。
+生成されたファイル (e.g., .exe or .bacpac)　およびユーザーコンフィグレーションの設定ファイル(e.g., .user)は GitHub にはコミットしないでください。
 
 ## Code of Conduct
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+このプロジェクトは [Microsoft Open Source Code of Conduct] 公認プロジェクトです。
+(https://opensource.microsoft.com/codeofconduct/). 詳細につきましては [Code of Conduct FAQ] をご覧ください。(https://opensource.microsoft.com/codeofconduct/faq/) もしくは [opencode@microsoft.com](mailto:opencode@microsoft.com) こちらのメールアドレスにご質問やコメントをお願いします。
 
-## License（ライセンス）
-These samples and templates are all licensed under the MIT license. See the license.txt file in the root.
+## ライセンス
+サンプルやテンプレートは、すべて MIT license に帰属します。root にある license.txt ファイルをご覧ください。
 
-## Questions （ご質問）
+## ご質問
 ご質問は下記メールアドレスまでお願いします。（英語のみ）
 Email: sqlserversamples@microsoft.com.
