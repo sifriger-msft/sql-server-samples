@@ -1,17 +1,17 @@
-# Sample Categories
+# サンプルのカテゴリー
 
 __[applications] (applications/)__
 
-End-to-end sample applications that illustrate the use of SQL Server for specific application scenarios.
+SQL Server を特定のアプリケーションシナリオで使用してもらうことを想定した、エンド to エンドでのサンプルアプリケーションです。
 
 __[databases] (databases/)__
 
-Sample databases for SQL Server, Azure SQL Database, and Azure SQL Data Warehouse.
+SQL Server, Azure SQL Database, Azure SQL Data Warehouse　向けのサンプルデーターベースです。
 
 __[features] (features/)__
 
-Samples illustrating specific SQL Server and Azure SQL Database features, including In-Memory OLTP, Master Data Services (MDS), and R Services.
+特定の SQL Server と Azure SQL Database インメモリ OLTP, マスターデータサービス( MDS )、R サービスの各機能に特化したサンプルです。
 
 __[management] (manage/)__
 
-Samples that help with the management of SQL Server and Azure SQL Database.
+SQL Server と Azure SQL Database の管理を手助けするサンプルです。
