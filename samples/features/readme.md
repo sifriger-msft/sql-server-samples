@@ -24,4 +24,4 @@ Built-in temporal functions enable you to easily track history of changes in a t
 
 [Reporting Services (SSRS)](reporting-services)
 
-Reporting Services provides reporting capabilities for your organziation. Reporting Services can be integrated with SharePoint Server or used as a standalone service.
+Reporting Services provides reporting capabilities for your organization. Reporting Services can be integrated with SharePoint Server or used as a standalone service.
