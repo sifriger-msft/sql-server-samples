@@ -11,7 +11,6 @@ To install the AdventureWorks databases with the database compatibility level of
 
 The install scripts create the sample database to have the database compatibility of your current version of SQL Server. Each script generates the version-specific information based on your current instance of SQL Server. This means you can use either the AdventureWorks or AdventureWorksDW install script on any version of SQL Server including CTPs, SPs, and interim releases.
 
-
 ### To install AdventureWorks
 
 1. Copy the GitHub data files and scripts for [AdventureWorks](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works/oltp-install-script) to the C:\Samples\AdventureWorks folder on your local client. 
