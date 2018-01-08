@@ -1,4 +1,3 @@
-
 # SQL Server 2017 Graph Database
 
 These demos are related to the session that [Sergio Govoni](https://mvp.microsoft.com/it-it/PublicProfile/4029181?fullName=Sergio%20Govoni) has done at the PASS SQL Saturday 675 in Parma (Italy). For those who don't already know the SQL Saturday events: Since 2007, the PASS SQL Saturday program provides to users around the world the opportunity to organize free training sessions on SQL Server and related technologies. SQL Saturday is an event sponsored by PASS and therefore offers excellent opportunities for training, professional exchange and networking. You can find all details in this page [About PASS SQL Saturday](http://www.sqlsaturday.com/about.aspx).
@@ -77,19 +76,19 @@ The purpose of the file **sqlsat675 10 Setup.sql** is to connect the database Wi
 
 ### Create graph objects
 
-The first demo consists in creating graph objects such as Nodes and Edges. This is the purpose of the file **sqlsat675 20 Nodes and Edges.sql**. Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB?, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that? uniquely identifies a given node in the database?, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id?**.
+The first demo consists in creating graph objects such as Nodes and Edges. This is the purpose of the file **sqlsat675 20 Nodes and Edges.sql**. Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
 
 The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create an Node table.
 
 ![](picture)
 
-Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge represents a relationship in a graph?, may or may not have any user defined attributes?, Edges are always directed and connected with two nodes?. In the first release, constraints are not available on the Edge table, so an Edge table can connect any two nodes on the graph. Every time an Edge table is created, in addition to the user defined columns, the Engine will create three implicit columns?
+Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge represents a relationship in a graph, may or may not have any user defined attributes, Edges are always directed and connected with two nodes. In the first release, constraints are not available on the Edge table, so an Edge table can connect any two nodes on the graph. Every time an Edge table is created, in addition to the user defined columns, the Engine will create three implicit columns:
 
 1. **$edge_id** is a combination of the **object_id** of the Edge and an internally bigint stored in an hidden column named **graph_id**
 
 2. **$from_id** stores the **$node_id** of the node where the Edge starts from
 
-3. **$to_id** stores the **$node_id** of the node at which the Edge ends?
+3. **$to_id** stores the **$node_id** of the node at which the Edge ends
 
 
 The following picture shows the CREATE statement with the new DDL extension **AS EDGE**, this extension tells to the engine that we want to create an Edge table.
@@ -98,7 +97,7 @@ The following picture shows the CREATE statement with the new DDL extension **AS
 
 The file **sqlsat675 20 Nodes and Edges.sql** contains the statements to populate the node **Nodes.Person** and the edge **Edges.Friends** starting from the table **Application.People** of WideWorldImporters DB.
 
-The new T-SQL MATCH function allows you to specify the search pattern for a graph schema?, it can be used only? with graph Node and Edge tables? in SELECT statements as a part of the WHERE clause?. Based on the node **Nodes.Person** and the edge **Edges.Friends**, the file **sqlsat675 20 Nodes and Edges.sql** contains the following sample query:
+The new T-SQL MATCH function allows you to specify the search pattern for a graph schema, it can be used only with graph Node and Edge tables in SELECT statements as a part of the WHERE clause. Based on the node **Nodes.Person** and the edge **Edges.Friends**, the file **sqlsat675 20 Nodes and Edges.sql** contains the following sample query:
 
 1. List of all guys that speak finnish with friends (Pattern: Node > Relationship > Node)
 
@@ -106,7 +105,7 @@ The new T-SQL MATCH function allows you to specify the search pattern for a grap
 
 3. People who have common friends that speak Croatian
 
-The search pattern, provided in the MATCH function, goes through one node to another by an edge, in the direction provided by the arrow?. Edge names or aliases are provided inside parenthesis?. Node names or aliases appear at the two ends of the arrow?.
+The search pattern, provided in the MATCH function, goes through one node to another by an edge, in the direction provided by the arrow. Edge names or aliases are provided inside parenthesis. Node names or aliases appear at the two ends of the arrow.
 
 <a name=disclaimers></a>
 
