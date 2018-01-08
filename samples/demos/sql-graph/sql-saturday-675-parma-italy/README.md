@@ -70,7 +70,7 @@ To run these demos, you need the following prerequisites.
 
 ```SQL
 USE [WideWorldImporters]
-```SQL
+```
 
 The purpose of the file **sqlsat675 10 Setup.sql** is to connect the database WideWorldImporters and create two new schema: **Edges** and **Nodes**.
 
