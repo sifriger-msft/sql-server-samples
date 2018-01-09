@@ -92,7 +92,7 @@ Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge 
 
 The following picture shows the CREATE statement with the new DDL extension **AS EDGE**, this extension tells to the engine that we want to create an Edge table.
 
-![Picture 2](segovoni/sql-server-samples/media/demos/sql-graph/Create an Edge Table.png)
+![Picture 2](sql-server-samples/media/demos/sql-graph/Create%20an%20Edge%20Table.png)
 
 The file **sqlsat675 20 Nodes and Edges.sql** contains the statements to populate the node **Nodes.Person** and the edge **Edges.Friends** starting from the table **Application.People** of WideWorldImporters DB.
 
