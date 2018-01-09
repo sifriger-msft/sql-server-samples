@@ -56,13 +56,13 @@ To run these demos, you need the following prerequisites.
 
 1. Download the **WideWorldImporters-Standard.bacpac** from the WideWorldImporters database [page](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0)
 
-2. Import the **WideWorldImporters-Standard.bacpac** bacpac file to your Azure subscription. This [article on SQL Shack](https://www.sqlshack.com/import-sample-bacpac-file-azure-sql-database/) explains how to import WideWorldImporters database to an Azure SQL Database, anyway, the instructions are valid for any bacpac file
+2. Import the **WideWorldImporters-Standard.bacpac** bacpac file to your Azure subscription. This [article](https://www.sqlshack.com/import-sample-bacpac-file-azure-sql-database/) on SQL Shack explains how to import WideWorldImporters database to an Azure SQL Database, anyway, the instructions are valid for any bacpac file
 
 3. Launch SQL Server Management Studio and connect to the newly created WideWorldImporters-Standard database
 
 #### SQL Server Setup
 
-1. Download **WideWorldImporters-Full.bak** from the WideWorldImporters database [page](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0).
+1. Download **WideWorldImporters-Full.bak** from the WideWorldImporters database [page](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0)
 
 2. Launch SQL Server Management Studio, connect to your SQL Server instance (2017) and restore **WideWorldImporters-Full.bak**. For further information about how to restore a database backup using SQL Server Management Studio, you can refer to this article: [Restore a Database Backup Using SSMS](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms). Once you have restored the WideWorldImporters database, you can connect it using the **USE** command like this:
 
