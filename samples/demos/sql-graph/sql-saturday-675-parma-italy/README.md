@@ -9,7 +9,6 @@ The demos are based on [WideWorldImporters](https://github.com/Microsoft/sql-ser
 [About this sample](#about-this-sample)<br/>
 [Before you begin](#before-you-begin)<br/>
 [Run this sample](#run-this-sample)<br/>
-[Sample details](#sample-details)<br/>
 [Disclaimers](#disclaimers)<br/>
 [Related links](#related-links)<br/>
 
@@ -80,7 +79,7 @@ The first demo consists in creating graph objects such as Nodes and Edges. This 
 
 The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create an Node table.
 
-![](picture)
+![](sql-server-samples/media/demos/sql-graph/Create a Node Table.png)
 
 Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge represents a relationship in a graph, may or may not have any user defined attributes, Edges are always directed and connected with two nodes. In the first release, constraints are not available on the Edge table, so an Edge table can connect any two nodes on the graph. Every time an Edge table is created, in addition to the user defined columns, the Engine will create three implicit columns:
 
@@ -93,7 +92,7 @@ Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge 
 
 The following picture shows the CREATE statement with the new DDL extension **AS EDGE**, this extension tells to the engine that we want to create an Edge table.
 
-![](picture)
+![](sql-server-samples/media/demos/sql-graph/Create an Edge Table.png)
 
 The file **sqlsat675 20 Nodes and Edges.sql** contains the statements to populate the node **Nodes.Person** and the edge **Edges.Friends** starting from the table **Application.People** of WideWorldImporters DB.
 
@@ -110,10 +109,17 @@ The search pattern, provided in the MATCH function, goes through one node to ano
 <a name=disclaimers></a>
 
 ## Disclaimers
+
 The code included in this sample is not intended to be a set of best practices on how to build scalable enterprise grade applications. This is beyond the scope of this quick start sample.
 
 <a name=related-links></a>
 
 ## Related Links
 
-For more information, see these articles:
+For more information about Graph DB in SQL Server 2017, see these articles:
+
+1. [Graph processing with SQL Server and Azure SQL Database](https://docs.microsoft.com/en-us/sql/relational-databases/graphs/sql-graph-overview)
+
+2. [SQL Graph Architecture](https://docs.microsoft.com/en-us/sql/relational-databases/graphs/sql-graph-architecture)
+
+3. [Arvind Shyamsundar's Blog](https://blogs.msdn.microsoft.com/arvindsh/)
