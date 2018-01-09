@@ -25,7 +25,7 @@ The demos are based on [WideWorldImporters](https://github.com/Microsoft/sql-ser
 	- Build a recommendation system for sales offers
 3. **Workload:**  Queries executed on [WideWorldImporters](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0)
 4. **Programming Language:** T-SQL
-5. **Authors:** [Sergio Govoni](https://mvp.microsoft.com/it-it/PublicProfile/4029181?fullName=Sergio%20Govoni)
+5. **Author:** [Sergio Govoni](https://mvp.microsoft.com/it-it/PublicProfile/4029181?fullName=Sergio%20Govoni)
 
 <a name=before-you-begin></a>
 
