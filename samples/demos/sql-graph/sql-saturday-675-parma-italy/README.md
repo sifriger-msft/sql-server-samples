@@ -79,7 +79,7 @@ The first demo consists in creating graph objects such as Nodes and Edges. This 
 
 The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create an Node table.
 
-![Picture 1](../../../demos/sql-graph/Create a Node Table.png)
+![Picture 1](../../../../../demos/sql-graph/Create a Node Table.png)
 
 Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge represents a relationship in a graph, may or may not have any user defined attributes, Edges are always directed and connected with two nodes. In the first release, constraints are not available on the Edge table, so an Edge table can connect any two nodes on the graph. Every time an Edge table is created, in addition to the user defined columns, the Engine will create three implicit columns:
 
