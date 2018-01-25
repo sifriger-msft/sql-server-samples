@@ -75,7 +75,7 @@ The purpose of the file [sqlsat675 10 Setup.sql](./sqlsat675%2010%20Setup.sql) i
 
 ### Create graph objects
 
-The first demo consists in creating graph objects such as Nodes and Edges. This is the purpose of the file **sqlsat675 20 Nodes and Edges.sql**. Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
+The first demo consists in creating graph objects such as Nodes and Edges. This is the purpose of the file [sqlsat675 20 Nodes and Edges.sql](./sqlsat675%2020%20Nodes%20and%20Edges.sql). Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
 
 The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create an Node table.
 
@@ -94,9 +94,12 @@ The following picture shows the CREATE statement with the new DDL extension **AS
 
 ![Picture 2](../../../../media/demos/sql-graph/Create%20an%20Edge%20Table.png)
 
-The file **sqlsat675 20 Nodes and Edges.sql** contains the statements to populate the node **Nodes.Person** and the edge **Edges.Friends** starting from the table **Application.People** of WideWorldImporters DB.
 
-The new T-SQL MATCH function allows you to specify the search pattern for a graph schema, it can be used only with graph Node and Edge tables in SELECT statements as a part of the WHERE clause. Based on the node **Nodes.Person** and the edge **Edges.Friends**, the file **sqlsat675 20 Nodes and Edges.sql** contains the following sample query:
+### Populate graph objects and execute sample queries
+
+The file [sqlsat675 20 Nodes and Edges.sql](./sqlsat675%2020%20Nodes%20and%20Edges.sql) also contains the statements to populate the node **Nodes.Person** and the edge **Edges.Friends** starting from the table **Application.People** of WideWorldImporters DB.
+
+The new T-SQL MATCH function allows you to specify the search pattern for a graph schema, it can be used only with graph Node and Edge tables in SELECT statements as a part of the WHERE clause. Based on the node **Nodes.Person** and the edge **Edges.Friends**, the file [sqlsat675 20 Nodes and Edges.sql](./sqlsat675%2020%20Nodes%20and%20Edges.sql) contains the following sample queries:
 
 1. List of all guys that speak finnish with friends (Pattern: Node > Relationship > Node)
 
@@ -105,6 +108,33 @@ The new T-SQL MATCH function allows you to specify the search pattern for a grap
 3. People who have common friends that speak Croatian
 
 The search pattern, provided in the MATCH function, goes through one node to another by an edge, in the direction provided by the arrow. Edge names or aliases are provided inside parenthesis. Node names or aliases appear at the two ends of the arrow.
+
+
+### Build a sample recommendation system using SQL Graph
+
+Supposing to have a customer (of the table Sales.Customers) connected to our e-commerce, this customer is looking for the product (of the table Warehouse.StockItems) "USB food flash drive - pizza slice" or he/she has just bought that product. Our goal is finding the similar products to the one he/she is looking at based on the behavior of other customers, in short words, we have to find products that are recommended for another one.
+
+The following picture shows a possible scenario for our sales recommendation system.
+
+![Picture 3](../../../../media/demos/sql-graph/Sales%20Recommendation%20Scenario.png)
+
+This is the algorithm:
+
+1. Identify the customer and the product he/she is purchasing
+
+2. Identify the other customers who have purchased the same item he/she is looking for
+
+3. Find the other products that customers, at step two, have purchased
+
+4. Recommend to the current customer the top items from the previous step, ordered by the number of times they were purchased
+
+The following picture shows the graphical representation of the algorithm.
+
+![Picture 4](../../../../media/demos/sql-graph/Sales%20Recommendation%20System.png)
+
+How can Graph Database helps us to implement this algorithm?
+
+The file [sqlsat675 40 Recommendation system.sql](./sqlsat675%2040%20Recommendation%20system.sql) contains the statements to create and populate the nodes **Nodes.Customers**, **Nodes.StockItems** and the edge **Edges.Bought** starting from the tables of WideWorldImporters DB. In the same file you can also find the query that is able to extract top 5 products that are recommended for "USB food flash drive - pizza slice" using the MATCH clause.
 
 <a name=disclaimers></a>
 
