@@ -79,7 +79,7 @@ The purpose of the file [before-you-begin.sql](./before-you-begin.sql) is to con
 
 The first demo consists in creating graph objects such as Nodes and Edges, this is the purpose of the file [demo1-create-and-populate-nodes-and-edges.sql](./demo1-create-and-populate-nodes-and-edges.sql). Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
 
-The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create an Node table.
+The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create a Node table.
 
 ![Picture 1](../../../../media/demos/sql-graph/Create%20a%20Node%20Table.png)
 
@@ -99,7 +99,7 @@ The node **Nodes.Person** and the edge **Edges.Friends** are populated starting 
 
 ### The first look to the MATCH clause
 
-The second demo allows you to do a first look to the MATCH clause used to perform some query on Nodes and Edges we have just created in the first demo.
+The second demo allows you to do a first look to the MATCH clause used to perform some query on Nodes and Edges we have just created (in the first demo).
 
 The new T-SQL MATCH function allows you to specify the search pattern for a graph schema, it can be used only with graph Node and Edge tables in SELECT statements as a part of the WHERE clause. Based on the node **Nodes.Person** and the edge **Edges.Friends**, the file [demo2-using-the-match-clause.sql](./demo2-using-the-match-clause.sql) contains the following sample queries:
 
