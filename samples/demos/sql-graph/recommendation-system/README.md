@@ -1,5 +1,9 @@
 # SQL Server 2017 Graph Database
 
+SQL Server has always provided tools to manage hierarchies and relationships, facilitating query execution on hierarchical data, but sometimes relationships can become complex. Think about many-to-many relationships, relational databases don't have a native solution for many-to-many associations. A common approach to realize many-to-many associations is to introduce a table that holds such relationships.
+
+SQL Server 2017, thanks to Graph Database, can express certain kinds of queries more easily than a relational database by transforming complex relationships into graphs.
+
 These demos are related to the session that [Sergio Govoni](https://mvp.microsoft.com/it-it/PublicProfile/4029181?fullName=Sergio%20Govoni) has done at the PASS SQL Saturday 675 in Parma (Italy).
 
 For those who don't already know the [SQL Saturday](http://www.sqlsaturday.com) events: Since 2007, the PASS SQL Saturday program provides to users around the world the opportunity to organize free training sessions on SQL Server and related technologies. SQL Saturday is an event sponsored by PASS and therefore offers excellent opportunities for training, professional exchange and networking. You can find all details in this page [About PASS SQL Saturday](http://www.sqlsaturday.com/about.aspx).
