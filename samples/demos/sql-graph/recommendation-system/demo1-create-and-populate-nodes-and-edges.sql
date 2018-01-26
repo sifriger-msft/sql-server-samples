@@ -55,13 +55,12 @@ INSERT INTO Nodes.Person
 SELECT
   PersonID
   ,FullName
-  ,[Language] = Languages.[Value]
+  ,[Language] = (SELECT JSON_VALUE(CustomFields, '$.OtherLanguages[0]'))
 FROM
   [Application].[People]
-CROSS APPLY
-  (SELECT * FROM OPENJSON (CustomFields, '$.OtherLanguages')) As Languages
 WHERE
-  Languages.[key] = 0;
+  (CustomFields IS NOT NULL)
+  AND ((SELECT JSON_VALUE(CustomFields, '$.OtherLanguages[0]')) <> '');
 GO
 
 
