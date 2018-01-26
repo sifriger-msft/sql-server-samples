@@ -72,12 +72,12 @@ To run these demos, you need the following prerequisites.
 USE [WideWorldImporters]
 ```
 
-The purpose of the file [sqlsat675 10 Setup.sql](./sqlsat675%2010%20Setup.sql) is to connect the database WideWorldImporters and create two new schema: **Edges** and **Nodes**.
+The purpose of the file [before-you-begin.sql](./before-you-begin.sql) is to connect the database WideWorldImporters and create two new schema: **Edges** and **Nodes**.
 
 
-### Create graph objects
+### Create and populate graph objects
 
-The first demo consists in creating graph objects such as Nodes and Edges. This is the purpose of the file [sqlsat675 20 Nodes and Edges.sql](./sqlsat675%2020%20Nodes%20and%20Edges.sql). Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
+The first demo consists in creating graph objects such as Nodes and Edges, this is the purpose of the file [demo1-create-and-populate-nodes-and-edges.sql](./demo1-create-and-populate-nodes-and-edges.sql). Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
 
 The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create an Node table.
 
@@ -91,17 +91,18 @@ Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge 
 
 3. **$to_id** stores the **$node_id** of the node at which the Edge ends
 
+The node **Nodes.Person** and the edge **Edges.Friends** are populated starting from the table **Application.People** of WideWorldImporters DB.
 
 The following picture shows the CREATE statement with the new DDL extension **AS EDGE**, this extension tells to the engine that we want to create an Edge table.
 
 ![Picture 2](../../../../media/demos/sql-graph/Create%20an%20Edge%20Table.png)
 
 
-### Populate graph objects and execute sample queries
+### The first look to the MATCH clause
 
-The file [sqlsat675 20 Nodes and Edges.sql](./sqlsat675%2020%20Nodes%20and%20Edges.sql) also contains the statements to populate the node **Nodes.Person** and the edge **Edges.Friends** starting from the table **Application.People** of WideWorldImporters DB.
+The second demo allows you to do a first look to the MATCH clause used to perform some query on Nodes and Edges we have just created in the first demo.
 
-The new T-SQL MATCH function allows you to specify the search pattern for a graph schema, it can be used only with graph Node and Edge tables in SELECT statements as a part of the WHERE clause. Based on the node **Nodes.Person** and the edge **Edges.Friends**, the file [sqlsat675 20 Nodes and Edges.sql](./sqlsat675%2020%20Nodes%20and%20Edges.sql) contains the following sample queries:
+The new T-SQL MATCH function allows you to specify the search pattern for a graph schema, it can be used only with graph Node and Edge tables in SELECT statements as a part of the WHERE clause. Based on the node **Nodes.Person** and the edge **Edges.Friends**, the file [demo2-using-the-match-clause.sql](./demo2-using-the-match-clause.sql) contains the following sample queries:
 
 1. List of all guys that speak finnish with friends (Pattern: Node > Relationship > Node)
 
@@ -136,7 +137,9 @@ The following picture shows the graphical representation of the algorithm.
 
 How can Graph Database helps us to implement this algorithm?
 
-The file [sqlsat675 40 Recommendation system.sql](./sqlsat675%2040%20Recommendation%20system.sql) contains the statements to create and populate the nodes **Nodes.Customers**, **Nodes.StockItems** and the edge **Edges.Bought** starting from the tables of WideWorldImporters DB. In the same file you can also find the query that is able to extract top 5 products that are recommended for "USB food flash drive - pizza slice" using the MATCH clause.
+The file [demo3-create-and-populate-nodes-and-edges.sql](./demo3-create-and-populate-nodes-and-edges.sql) contains the statements to create and populate the nodes **Nodes.Customers**, **Nodes.StockItems** and the edge **Edges.Bought** starting from the tables of WideWorldImporters DB.
+
+The file [demo3-recommendation-system-for-sales.sql](./demo3-recommendation-system-for-sales.sql) contains the query that is able to extract top 5 products that are recommended for "USB food flash drive - pizza slice" using the MATCH clause.
 
 <a name=disclaimers></a>
 
