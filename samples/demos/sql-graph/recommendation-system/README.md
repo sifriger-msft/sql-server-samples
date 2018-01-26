@@ -91,12 +91,11 @@ Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge 
 
 3. **$to_id** stores the **$node_id** of the node at which the Edge ends
 
-The node **Nodes.Person** and the edge **Edges.Friends** are populated starting from the table **Application.People** of WideWorldImporters DB.
-
 The following picture shows the CREATE statement with the new DDL extension **AS EDGE**, this extension tells to the engine that we want to create an Edge table.
 
 ![Picture 2](../../../../media/demos/sql-graph/Create%20an%20Edge%20Table.png)
 
+The node **Nodes.Person** and the edge **Edges.Friends** are populated starting from the table **Application.People** of WideWorldImporters DB.
 
 ### The first look to the MATCH clause
 
@@ -135,11 +134,15 @@ The following picture shows the graphical representation of the algorithm.
 
 ![Picture 4](../../../../media/demos/sql-graph/Sales%20Recommendation%20System.png)
 
-How can Graph Database helps us to implement this algorithm?
-
 The file [demo3-create-and-populate-nodes-and-edges.sql](./demo3-create-and-populate-nodes-and-edges.sql) contains the statements to create and populate the nodes **Nodes.Customers**, **Nodes.StockItems** and the edge **Edges.Bought** starting from the tables of WideWorldImporters DB.
 
+How can Graph Database helps us to implement this algorithm?
+
+MATCH clause can express certain kinds of queries more easily than relational JOINs, let's start, we will use the counts to prioritize the recommendations that is the simplest possible algorithm for a recommendation service, in reality more complex filters are applied on top, for example text analysis of the product reviews to arrive at similarly measures.
+
 The file [demo3-recommendation-system-for-sales.sql](./demo3-recommendation-system-for-sales.sql) contains the query that is able to extract top 5 products that are recommended for "USB food flash drive - pizza slice" using the MATCH clause.
+
+The last query of the file [demo3-recommendation-system-for-sales.sql](./demo3-recommendation-system-for-sales.sql) shows you the implementation of the algorithm in the relational database using JOINs.. so you will know how many lines of code you would have wrote prior to SQL Graph Database.
 
 <a name=disclaimers></a>
 
