@@ -6,7 +6,7 @@ SQL Server 2017, thanks to Graph Database, can express certain kinds of queries 
 
 These demos, based on [WideWorldImporters](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers) sample database, are related to the session that [Sergio Govoni](https://mvp.microsoft.com/it-it/PublicProfile/4029181?fullName=Sergio%20Govoni) has done at the PASS SQL Saturday 675 in Parma (Italy).
 
-For those who don't already know the [SQL Saturday](http://www.sqlsaturday.com) events: Since 2007, the PASS SQL Saturday program provides to users around the world the opportunity to organize free training sessions on SQL Server and related technologies. SQL Saturday is an event sponsored by PASS and therefore offers excellent opportunities for training, professional exchange and networking. You can find all details in this page [About PASS SQL Saturday](http://www.sqlsaturday.com/about.aspx).
+For those who don't already know the [SQL Saturday](http://www.sqlsaturday.com) events: Since 2007, the PASS SQL Saturday program provides to users around the world the opportunity to organize free training sessions on SQL Server and related technologies. SQL Saturday is an event sponsored by PASS and therefore offers excellent opportunities for training, professional exchange and networking. You can find all details in this page: [About PASS SQL Saturday](http://www.sqlsaturday.com/about.aspx).
 
 
 ### Contents
@@ -80,13 +80,13 @@ The purpose of the file [before-you-begin.sql](./before-you-begin.sql) is to con
 
 ### Create and populate graph objects
 
-The first demo consists in creating graph objects such as Nodes and Edges, this is the purpose of the file [demo1-create-and-populate-nodes-and-edges.sql](./demo1-create-and-populate-nodes-and-edges.sql). Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, the SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
+The first demo consists in creating graph objects such as Nodes and Edges, this is the purpose of the file [demo1-create-and-populate-nodes-and-edges.sql](./demo1-create-and-populate-nodes-and-edges.sql). Let's start with the Node table named **Nodes.Person**. A node table represents an entity in a Graph DB, every time a node is created, in addition to the user defined columns, SQL Server Engine will create an implicit column named **$node_id** that uniquely identifies a given node in the database, it contains a combination of the **object_id** of the node and an internally bigint stored in an hidden column named **graph_id**.
 
 The following picture shows the CREATE statement with the new DDL extension **AS NODE**, this extension tells to the engine that we want to create a Node table.
 
 ![Picture 1](../../../../media/demos/sql-graph/Create%20a%20Node%20Table.png)
 
-Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge represents a relationship in a graph, may or may not have any user defined attributes, Edges are always directed and connected with two nodes. In the first release, constraints are not available on the Edge table, so an Edge table can connect any two nodes on the graph. Every time an Edge table is created, in addition to the user defined columns, the Engine will create three implicit columns:
+Now, it's the time to create the Edge table named **Edges.Friends**. Every Edge represents a relationship in a graph, it may or may not have any user defined attributes, Edges are always directed and connected with two nodes. In the first release of SQL Graph, constraints are not available on the Edge table, so an Edge table can connect any two nodes on the graph. Every time an Edge table is created, in addition to the user defined columns, the Engine will create three implicit columns:
 
 1. **$edge_id** is a combination of the **object_id** of the Edge and an internally bigint stored in an hidden column named **graph_id**
 
@@ -117,7 +117,7 @@ The search pattern, provided in the MATCH function, goes through one node to ano
 
 ### Build a sample recommendation system using SQL Graph
 
-Supposing to have a customer (of the table Sales.Customers) connected to our e-commerce, this customer is looking for the product (of the table Warehouse.StockItems) "USB food flash drive - pizza slice" or he/she has just bought that product. Our goal is finding the similar products to the one he/she is looking at based on the behavior of other customers, in short words, we have to find products that are recommended for another one.
+Supposing to have a customer (of the table Sales.Customers) connected to our e-commerce, this customer is looking for the product (of the table Warehouse.StockItems) "USB food flash drive - pizza slice" or he/she has just bought that product. Our goal is finding the similar products to the one he/she is looking at, based on the behavior of other customers. In short words, we have to find products that are recommended for another one.
 
 The following picture shows a possible scenario for our sales recommendation system.
 
@@ -141,7 +141,7 @@ The file [demo3-create-and-populate-nodes-and-edges.sql](./demo3-create-and-popu
 
 How can Graph Database helps us to implement this algorithm?
 
-MATCH clause can express certain kinds of queries more easily than relational JOINs, let's start, we will use the counts to prioritize the recommendations that is the simplest possible algorithm for a recommendation service, in reality more complex filters are applied on top, for example text analysis of the product reviews to arrive at similarly measures.
+MATCH clause can express certain kinds of queries more easily than relational JOINs; let's start, we will use the counts to prioritize the recommendations that is the simplest possible algorithm for a recommendation service, in reality more complex filters are applied on top, for example text analysis of the product reviews to arrive at similarly measures.
 
 The file [demo3-recommendation-system-for-sales.sql](./demo3-recommendation-system-for-sales.sql) contains the query that is able to extract top 5 products that are recommended for "USB food flash drive - pizza slice" using the MATCH clause.
 
