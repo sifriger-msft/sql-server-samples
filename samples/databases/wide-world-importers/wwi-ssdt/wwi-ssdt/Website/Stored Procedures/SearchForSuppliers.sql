@@ -2,6 +2,7 @@
 CREATE PROCEDURE Website.SearchForSuppliers
 @SearchText nvarchar(1000),
 @MaximumRowsToReturn int
+WITH EXECUTE AS OWNER
 AS
 BEGIN
     SELECT TOP(@MaximumRowsToReturn)
