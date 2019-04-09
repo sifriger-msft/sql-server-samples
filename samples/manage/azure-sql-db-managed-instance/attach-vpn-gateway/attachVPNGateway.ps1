@@ -27,14 +27,14 @@ function Ensure-Login ()
     $context = Get-AzureRmContext
     If($context.Subscription -eq $null)
     {
-        Write-Host "Loging in ..."
+        Write-Host "Logging in ..."
         If((Login-AzureRmAccount -ErrorAction SilentlyContinue -ErrorVariable Errors) -eq $null)
         {
             Write-Host ("Login failed: {0}" -f $Errors[0].Exception.Message) -ForegroundColor Red
             Break
         }
     }
-    Write-Host "User logedin." -ForegroundColor Green
+    Write-Host "User logged in." -ForegroundColor Green
 }
 
 function Select-SubscriptionId {
