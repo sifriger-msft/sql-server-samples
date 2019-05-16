@@ -10,7 +10,7 @@ metadata:
 spec:
 
   sqlServerContainer:
-    image: mcr.microsoft.com/mssql/server:2019-CTP2.1-ubuntu
+    image: mcr.microsoft.com/mssql/server:2019-CTP2.2-ubuntu
 
   saPassword:
     secretKeyRef:
