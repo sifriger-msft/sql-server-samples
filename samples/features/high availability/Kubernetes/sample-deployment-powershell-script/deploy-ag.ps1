@@ -45,3 +45,5 @@ kubectl apply `
 --namespace $NamespaceName
 
 Write-Host "SQL Server Availability Group deployed successfully" -ForegroundColor Cyan
+
+Set-Location $currentWorkingDirectory
