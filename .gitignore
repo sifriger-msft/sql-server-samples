@@ -443,3 +443,5 @@ samples/databases/wide-world-importers/workload-drivers/order-insert/Multithread
 *.pem
 *.p12
 
+codealike.json
+
