@@ -4,7 +4,7 @@ Param(
 )
 
 $currentWorkingDirectory = (Get-Location).Path | Split-Path -Parent
-$manifestRootDirectory = Join-Path $currentWorkingDirectory "k8s/AKS"
+$manifestRootDirectory = Join-Path $currentWorkingDirectory "sample-manifest-files"
 
 Set-Location $manifestRootDirectory
 
@@ -15,7 +15,7 @@ Write-Host "Namespace $NamespaceName created successfully" -ForegroundColor Cyan
 Write-Host "Deploying SQL Server Operator" -ForegroundColor Yellow
 
 kubectl apply `
---filename operator.yml `
+--filename operator.yaml `
 --namespace $NamespaceName
 
 Write-Host "SQL Server Operator deployed successfully" -ForegroundColor Cyan
@@ -33,7 +33,7 @@ Write-Host "Created SA password and master key password successfully" -Foregroun
 Write-Host "Deploying SQL Server custom resource" -ForegroundColor Yellow
 
 kubectl apply `
---filename sqlserver.yml `
+--filename sqlserver.yaml `
 --namespace $NamespaceName
 
 Write-Host "SQL Server custom resource deployed successfully" -ForegroundColor Cyan
@@ -41,7 +41,7 @@ Write-Host "SQL Server custom resource deployed successfully" -ForegroundColor C
 Write-Host "Deploying SQL Server Availability Group" -ForegroundColor Yellow
 
 kubectl apply `
---filename agservices.yml `
+--filename ag-services.yaml `
 --namespace $NamespaceName
 
 Write-Host "SQL Server Availability Group deployed successfully" -ForegroundColor Cyan
