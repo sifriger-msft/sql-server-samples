@@ -169,4 +169,5 @@ For more information about Graph DB in SQL Server 2017, see these articles:
 
 1. [SQL Server 2017 Graph Database](https://vimeo.com/278845037)
 
-Enjoy!
+
+Enjoy with SQL Graph DB!
