@@ -164,3 +164,9 @@ For more information about Graph DB in SQL Server 2017, see these articles:
 2. [SQL Graph Architecture](https://docs.microsoft.com/en-us/sql/relational-databases/graphs/sql-graph-architecture)
 
 3. [Arvind Shyamsundar's Blog](https://blogs.msdn.microsoft.com/arvindsh/)
+
+## Video
+
+1. [SQL Server 2017 Graph Database](https://vimeo.com/278845037)
+
+Enjoy!
