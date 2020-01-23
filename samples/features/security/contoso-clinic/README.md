@@ -37,7 +37,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](http://micr
 	![Import Data-tier Application Wizard](img/import-bacpac.png)
 	+ Complete the steps of the wizard. 
 3. While connected to your database (master) via SSMS, execute [setup/Create-Application-Login.sql](setup/Create-Application-Login.sql) link.
-	+ Before running the script, create a password for the `ContosoClinicApplicaation` user.  
+	+ Before running the script, create a password for the `ContosoClinicApplication` user.  
 	+ This script creates a login and user, assigns `datareader` and `datawriter` permissions, and gives several Always Encrypted specific permissions to the `ContosoClinicApplication` user 
 
 ### Modify and Set up the Sample Application Project
