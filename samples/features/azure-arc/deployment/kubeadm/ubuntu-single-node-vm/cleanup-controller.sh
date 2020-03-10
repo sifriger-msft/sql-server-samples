@@ -67,13 +67,13 @@ fi
 # Clean the mounted volumes.
 #
 
-for i in $(seq 1 40); do
+for i in $(seq 1 80); do
 
   vol="vol$i"
 
-  sudo umount /mnt/local-storage/$vol
+  sudo umount /azurearc/local-storage/$vol
 
-  sudo rm -rf /mnt/local-storage/$vol
+  sudo rm -rf /azurearc/local-storage/$vol
 
 done
 
