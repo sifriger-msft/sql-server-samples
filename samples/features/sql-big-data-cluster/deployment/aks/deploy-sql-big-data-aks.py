@@ -71,7 +71,6 @@ SP_NAME = AZURE_REGION + '_' + GROUP_NAME + '_' + CLUSTER_NAME
 print ("Creating Service Principal: "+SP_NAME)
 command = "az ad sp create-for-rbac --skip-assignment --name http://" + SP_NAME
 SP_RESULT=getoutput(command)
-print(SP_RESULT)
 SP_JSON = json.loads(SP_RESULT[SP_RESULT.find("{"):])
 SP_PRINCIPAL = (SP_JSON['appId'])
 SP_PW = (SP_JSON['password'])
