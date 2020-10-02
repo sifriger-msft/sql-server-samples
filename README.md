@@ -16,7 +16,7 @@ Releases allow you to conveniently download sample databases or applications wit
 To see the complete list of resources in this repository, navigate to [Releases](https://github.com/Microsoft/sql-server-samples/releases)
 
 ## Working in GitHub
-To work in GitHub, [Goto](https://github.com/microsoft/sql-server-samples) and fork the repository. Work in your own fork and when you are ready to submit to make a change or publish your sample for the first time, submit a pull request into the master branch of sql-server-samples. One of the approvers will review your request and accept or reject the pull request.
+To work in GitHub, [Go to](https://github.com/microsoft/sql-server-samples) and fork the repository. Work in your own fork and when you are ready to submit to make a change or publish your sample for the first time, submit a pull request into the master branch of sql-server-samples. One of the approvers will review your request and accept or reject the pull request.
 
 Each sample should be in its own folder with a README.md file that follows the [template](README_samples_template.md). Generated files (e.g., .exe or .bacpac) and user configuration settings (e.g., .user) should not be committed to GitHub.
 
