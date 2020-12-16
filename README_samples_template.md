@@ -1,7 +1,7 @@
 <!-- Always leave the MS logo -->
 ![](./media/solutions-microsoft-logo-small.png)
 
-# Sample name
+# Sample name by Duvan Mejia
 
 Briefly describe what the sample does. Describe the benefit of running this sample.
 
@@ -59,7 +59,7 @@ To run this sample, you need the following prerequisites.
 
 2. In Visual Studio Build menu, select **Build Solution** (or Press F6).
 
-3. Step 3 ... 
+3. Step 3 ...
 
 <a name=sample-details></a>
 
