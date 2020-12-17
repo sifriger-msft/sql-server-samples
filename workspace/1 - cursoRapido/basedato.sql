@@ -17,6 +17,7 @@ cod_prod varchar(4) not null,
 nombre varchar(50)not null,
 existencia int not null,
 )
+WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA)
 GO
 
 -- Insertamos Algunos datos
@@ -32,8 +33,7 @@ insert into productos values('A009','LAMPARA ESCRITORIO',7);
 insert into productos values('A010','MONITOR LED 18 PULGADAS',45);
 insert into productos values('A011','LIBRERO',20);
 
-WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA)
-GO
+
 
 --Agregar un Dato a la tabla producto
 insert into productos values ( 'A012', 'iphone 11', 12);
