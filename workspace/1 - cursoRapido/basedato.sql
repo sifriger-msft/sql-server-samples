@@ -34,6 +34,15 @@ insert into productos values('A010','MONITOR LED 18 PULGADAS',45);
 insert into productos values('A011','LIBRERO',20);
 
 
+/* Funcion del GO
+
+  º Es la finalizacion de un lote de sentencias.
+  º Las sentencias SQL no deben ocupar la misma linea de Go.
+  º Podemos correr un archivo SQL con multiples consultas separadas por Go
+
+
+*/
+
 
 --Agregar un Dato a la tabla producto
 insert into productos values ( 'A012', 'iphone 11', 12);
