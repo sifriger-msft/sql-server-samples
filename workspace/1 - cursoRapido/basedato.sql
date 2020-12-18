@@ -33,6 +33,13 @@ insert into productos values('A009','LAMPARA ESCRITORIO',7);
 insert into productos values('A010','MONITOR LED 18 PULGADAS',45);
 insert into productos values('A011','LIBRERO',20);
 
+--Agregar un Dato a la tabla producto
+insert into productos values ( 'A012', 'iphone 11', 12);
+
+-- Mostramos la tabla
+select * from productos;
+
+
 
 /* Funcion del GO
 
@@ -40,12 +47,31 @@ insert into productos values('A011','LIBRERO',20);
   º Las sentencias SQL no deben ocupar la misma linea de Go.
   º Podemos correr un archivo SQL con multiples consultas separadas por Go
 
-
+ Funcion identity .
+ º Para insertar valores consecutivos.
+ º Puede ir en la Primary -> Aumenta de 1 a 1 , o la podemos personalizar
+ º Creamos un Query que nos crea una tabla, el valor inicial comienza en 11 y incrementa de 2 en 2
+ º cON identity tambien podemos Agregar valores repetidos, quitar primary Key 
 */
 
+Drop table IF EXISTS PIncrement;
+GO
 
---Agregar un Dato a la tabla producto
-insert into productos values ( 'A012', 'iphone 11', 12);
+create table PIncrement
+(
+id_Cod int identity(11,2) primary key,
+cod_prod varchar(4) not null,
+nombre varchar(50)not null,
+existencia int not null,
+)
+GO
 
--- Mostramos la tabla
-select * from productos;
+-- Insertamos Algunos datos
+insert into PIncrement values('A001','MEMORIA USB 32GB',175);
+insert into PIncrement values('A002','DISCO DURO 2TB',15);
+insert into PIncrement values('A003','AIRE COMPRIMIDO',250);
+insert into PIncrement values('A004','ESPUMA LIMPIADORA',300);
+GO
+
+SELECT * from PIncrement;
+GO
