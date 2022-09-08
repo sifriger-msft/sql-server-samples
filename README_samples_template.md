@@ -2,6 +2,7 @@
 ![](./media/solutions-microsoft-logo-small.png)
 
 # Sample name
+# Sample name123
 
 Briefly describe what the sample does. Describe the benefit of running this sample.
 
