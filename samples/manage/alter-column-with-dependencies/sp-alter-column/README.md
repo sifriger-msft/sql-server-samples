@@ -71,15 +71,15 @@ Just changing the name is not a trivial operation especially when the column is 
 
 **How had you solved the problem?**
 
-Some of you have probably deleted manually the linked objects, next you have changed the data type of the column, the size where expected or the properties and then you have recreated the previously deleted objects manually. You have been very careful to not change the properties of the objects themselves during DROP and CREATE operations.
+Some of you have probably deleted manually the linked objects, next you have changed the data type of the column, the size where expected or the properties and then you have recreated the previously deleted objects manually. You have been very careful to not change the properties of the objects themselves during `DROP` and `CREATE` operations.
 
-I faced several times this issue, so I decided to create a stored procedure that is able to compose automatically the appropriate DROP and CREATE commands for each object connected to the column I want to modify. Thus was born the sp_alter_column stored procedure which is now available on GitHub here: [https://github.com/segovoni/sp_alter_column](https://github.com/segovoni/sp_alter_column).
+I faced several times this issue, so I decided to create a stored procedure that is able to compose automatically the appropriate `DROP` and `CREATE` commands for each object connected to the column I want to modify. Thus was born the sp_alter_column stored procedure which is now available on GitHub here: [https://github.com/segovoni/sp_alter_column](https://github.com/segovoni/sp_alter_column).
 
 **How the sp_alter_column works**
 
-After the input parameters has been checked, sp_alter_column identifies objects that depend on the column you want to modify and, based on the type of the object, it generates the appropriate DROP and CREATE T-SQL commands for the following execution. All the T-SQL commands composed automatically are stored in a temporary table managed by the stored procedure.
+After the input parameters has been checked, sp_alter_column identifies objects that depend on the column you want to modify and, based on the type of the object, it generates the appropriate `DROP` and `CREATE` T-SQL commands for the following execution. All the T-SQL commands composed automatically are stored in a temporary table managed by the stored procedure.
 
-sp_alter_column is able to identify and generate, for the identified objects, the DROP/CREATE commands for the following database objects (which may have dependencies with a column):
+sp_alter_column is able to identify and generate, for the identified objects, the `DROP/CREATE` commands for the following database objects (which may have dependencies with a column):
 
 - Primary keys
 - Foreign keys
