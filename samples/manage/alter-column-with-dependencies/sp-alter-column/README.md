@@ -90,11 +90,11 @@ sp_alter_column is able to identify and generate, for the identified objects, th
 - Statistics
 - Views
 
-The parameter executionmode defines the execution mode of the Stored Procedure.
+The parameter `executionmode` defines the execution mode of the stored procedure.
 
-The value Zero (default, preview mode) indicates that DROP/CREATE commands will not have to be applied, they will be only displayed as output. The sp_alter_column will display only the T-SQL commands needed to change the data type of the column or its name. This execution mode is particularly suitable for becoming familiar with the Stored Procedure or when you want to have more control over the commands that will be executed, leaving to the sp_alter_column only the job of generating them.
+The value Zero (default, preview mode) indicates that `DROP/CREATE` commands will not have to be applied, they will be only displayed as output. The sp_alter_column will display only the T-SQL commands needed to change the data type of the column or its name. This execution mode is particularly suitable for becoming familiar with the stored procedure or when you want to have more control over the commands that will be executed, leaving to the sp_alter_column only the job of generating them.
 
-The value One (executive mode) given to the parameter executionmode indicates to the Stored Procedure that caller wants to apply the T-SQL commands needed to change the data type of the column or its name. Changes will be performed within an explicit transaction; the Commit will be applied at the end of all operations if all of them has been executed successfully. If something goes wrong a `rollback` will be executed.
+The value One (executive mode) given to the parameter `executionmode` indicates to the stored procedure that caller wants to apply the T-SQL commands needed to change the data type of the column or its name. Changes will be performed within an explicit transaction; the `commit` will be applied at the end of all operations if all of them has been executed successfully. If something goes wrong a `rollback` will be executed.
 
 **How to debug the sp_alter_column stored procedure**
 
