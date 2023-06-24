@@ -1,9 +1,9 @@
 <!-- Always leave the MS logo -->
 ![](https://github.com/microsoft/sql-server-samples/blob/master/media/solutions-microsoft-logo-small.png)
 
-# Alter a column with dependencies in your SQL Server database with sp_alter_column!
+# Alter a column with dependencies in your SQL Server database!
 
-This sample describes how to manage the error message 5074 when you alter a column with dependencies in your SQL Server database!
+This sample describes how to manage the [error message 5074](https://learn.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors#errors-5000-to-5999) when you alter a column with dependencies in your SQL Server database!
 
 ### Contents
 
@@ -20,7 +20,7 @@ This sample describes how to manage the error message 5074 when you alter a colu
 ## About this sample
 
 - **Applies to:** SQL Server 2012 (or higher)
-- **Key features:** Alter a column with dependencies
+- **Key features:** Alter a column with linked database objects
 - **Workload:** [AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
 - **Programming Language:** T-SQL
 - **Authors:** [Sergio Govoni](https://www.linkedin.com/in/sgovoni/) | [Microsoft MVP Profile](https://mvp.microsoft.com/it-it/PublicProfile/4029181?fullName=Sergio%20Govoni) | [Blog](https://segovoni.medium.com/) | [GitHub](https://github.com/segovoni) | [Twitter](https://twitter.com/segovoni)
@@ -31,7 +31,7 @@ This sample describes how to manage the error message 5074 when you alter a colu
 
 To run this example, the following basic concepts are required.
 
-Changing the column name is not a trivial operation especially if the column is referenced in Views, Stored Procedures etc. To execute the rename of a column, there is the [sp_rename](https://learn.microsoft.com/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?WT.mc_id=DP-MVP-4029181) system Stored Procedure, but for changing the data type of the column, if you don't want to use any third-party tools, you have no other option than to manually create a T-SQL script.
+Changing the column name is not a trivial operation especially if the column is referenced in Views, Stored Procedures etc. To execute the rename of a column, there is the [sp_rename](https://learn.microsoft.com/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?WT.mc_id=DP-MVP-4029181) system stored procedure, but for changing the data type of the column, if you don't want to use any third-party tools, you have no other option than to manually create a T-SQL script.
 
 
 **Software prerequisites:**
@@ -47,9 +47,9 @@ It could has happened to you to change the data type or the name of a column and
 This is the error you probably faced on:
 
 ```sql
-Msg 5074, Level 16, State 1, Line 1135 — The object 'objectname' is dependent on column 'columnname'.
+Msg 5074, Level 16, State 1, Line 1135 - The object 'objectname' is dependent on column 'columnname'.
 
-Msg 4922, Level 16, State 9, Line 1135 — ALTER TABLE ALTER COLUMN columnname failed because one or more objects access this column.
+Msg 4922, Level 16, State 9, Line 1135 - ALTER TABLE ALTER COLUMN columnname failed because one or more objects access this column.
 ```
 
 <a name=run-this-sample></a>
@@ -67,7 +67,7 @@ Msg 4922, Level 16, State 9, Line 1135 — ALTER TABLE ALTER COLUMN columnname f
 
 **The challenge**
 
-Just changing the name is not a trivial operation especially when the column is referenced in others database objects like Views, Indexes, Statistics etc. To rename a column in a table, there is the sp_rename system Stored Procedure, but for changing the data type of the column, if you don’t want to use any third-party tools, you have no other option than to manually write T-SQL code to do that.
+Just changing the name is not a trivial operation especially when the column is referenced in others database objects like Views, Indexes, Statistics etc. To rename a column in a table, there is the sp_rename system stored procedure, but for changing the data type of the column, if you don't want to use any third-party tools, you have no other option than to manually write T-SQL code to do that.
 
 **How had you solved the problem?**
 
@@ -100,15 +100,15 @@ The value One (executive mode) given to the parameter executionmode indicates to
 
 The most important programming languages have debugging tools integrated into the development tool. Debugger usually has a graphic interface that allows you to inspect the variables values and other things at run-time to analyze source code and program flow row-by-row and finally the debugger allows you to manage breakpoints.
 
-Each developer loves debugging tools because they are very useful when a program fails in a calculation or when it runs into an error. Now, think about our Stored Procedure that performs complex operations silently and suppose that it runs into a problem; probably, this question comes to your mind: “Can I debug a Stored Procedure?” and if it is possible, “How can I do that?”
+Each developer loves debugging tools because they are very useful when a program fails in a calculation or when it runs into an error. Now, think about our stored procedure that performs complex operations silently and suppose that it runs into a problem; probably, this question comes to your mind: "Can I debug a stored procedure?" and if it is possible, "How can I do that?"
 
-Debugging a stored procedure is possible with Microsoft Visual Studio development tool.
+Debugging a stored procedure is possible with Microsoft Visual Studio development tool and Azure Data Studio!
 
 <a name=sample-details></a>
 
 ## Sample details
 
-According to the conversion rules between data types described in [this article](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql?WT.mc_id=DP-MVP-4029181), the sp_alter_column stored procedure allows you to easily modify the data type of a column or its name, enjoy!
+According to the conversion rules between data types described in [this article](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql?WT.mc_id=DP-MVP-4029181), the sp_alter_column stored procedure allows you to easily modify the data type of a column or its name!
 
 <a name=disclaimers></a>
 
