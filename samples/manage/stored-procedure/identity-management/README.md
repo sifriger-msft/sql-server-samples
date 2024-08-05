@@ -31,7 +31,7 @@ This error happens when the value in the IDENTITY column goes over the limit for
 
 ## About this sample
 
-- **Applies to:** SQL Server 2017 (or higher)
+- **Applies to:** SQL Server 2016 (or higher)
 - **Key features:** IDENTITY column
 - **Workload:** No workload related to this sample
 - **Programming Language:** T-SQL
