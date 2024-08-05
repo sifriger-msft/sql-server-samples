@@ -107,7 +107,7 @@ Given that the table in question contained about 600,000 records, I chose to exp
 
 <a name=benefits></a>
 
-## Benefits of using the `sp_identity_rebirth` stored procedure
+## Benefits of using the sp_identity_rebirth stored procedure
 
 - **Foreign Key Management**: The procedure handles foreign keys, ensuring that references remain valid after regenerating the IDENTITY column values
 - **Backup Creation**: Creating a backup copy of the original table provides a layer of security against data loss
