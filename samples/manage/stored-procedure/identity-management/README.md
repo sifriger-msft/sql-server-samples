@@ -65,7 +65,7 @@ One possible solution is to change the data type of the IDENTITY column. For exa
 
 An alternative solution is to compact, when possible, the values of the IDENTITY column without renaming the table and without losing connected objects such as constraints, indexes, statistics, triggers, etc., whose management would significantly complicate the solution.
 
-Given that the table in question contained about 600,000 records, I chose to explore the solution that involves compacting the values. I adopted an approach that uses a temporary column to store the current values in the IDENTITY column, regenerate new values, and update the linked tables. It is important to note that you cannot directly update an IDENTITY column, even with IDENTITY_INSERT set to ON. From this study, the stored procedure `sp_identity_rebirth` was created, which uses a multi-phase strategy to regenerate the values of an IDENTITY column, maintaining referential integrity and minimizing the risks of data loss.
+Given that the table in question contained about 600,000 records, I chose to explore the solution that involves compacting the values. I adopted an approach that uses a temporary column to store the current values in the IDENTITY column, regenerate new values, and update the linked tables. It is important to note that you cannot directly update an IDENTITY column, even with IDENTITY_INSERT set to ON. From this study, the stored procedure [sp_identity_rebirth](https://github.com/microsoft/sql-server-samples/tree/master/samples/manage/stored-procedure/identity-management/source/sp-identity-rebirth.sql) was created, which uses a multi-phase strategy to regenerate the values of an IDENTITY column, maintaining referential integrity and minimizing the risks of data loss.
 
 ##### Resolution steps for option 2
 
@@ -120,7 +120,7 @@ Given that the table in question contained about 600,000 records, I chose to exp
 
 <a name=outcome></a>
 
-By utilizing the `sp_identity_rebirth` stored procedure, you can successfully manage and regenerate IDENTITY column values in SQL Server and Azure SQL tables while maintaining referential integrity and preserving related objects such as constraints, indexes, and triggers. This approach effectively prevents data overflow errors and ensures data consistency without the need to rename tables or lose linked objects. Overall, integrating `sp_identity_rebirth` into your database maintenance strategy will help address issues related to IDENTITY column overflows and maintain the integrity of your database schema and relationships.
+By utilizing the [sp_identity_rebirth](https://github.com/microsoft/sql-server-samples/tree/master/samples/manage/stored-procedure/identity-management/source/sp-identity-rebirth.sql) stored procedure, you can successfully manage and regenerate IDENTITY column values in SQL Server and Azure SQL tables while maintaining referential integrity and preserving related objects such as constraints, indexes, and triggers. This approach effectively prevents data overflow errors and ensures data consistency without the need to rename tables or lose linked objects. Overall, integrating `sp_identity_rebirth` into your database maintenance strategy will help address issues related to IDENTITY column overflows and maintain the integrity of your database schema and relationships.
 
 <a name=disclaimers></a>
 
