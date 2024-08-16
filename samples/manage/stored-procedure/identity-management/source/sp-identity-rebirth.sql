@@ -398,7 +398,7 @@ BEGIN
 
     SET NOCOUNT OFF;
 
-	  THROW;
+    THROW;
   END CATCH
 END;
 GO
